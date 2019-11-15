@@ -1,0 +1,17 @@
+<div class="row">
+        <div class="col-md-6 col-lg-4 mx-auto">
+            <h2>Delete User</h2>
+            <form [formGroup]="userForm1" (submit)="delete()">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" formControlName="username" class="form-control" />
+                    <div *ngIf="Username.invalid && Username.touched" class="text-danger">
+                        <div *ngIf="Username.errors && Username.errors['required']">Username cannot be empty</div>
+                    </div>
+                </div>
+                
+    
+                <button type="submit" [disabled]="userForm1.invalid" class="btn btn-primary">Delete</button>
+            </form>
+        </div>
+    </div>
